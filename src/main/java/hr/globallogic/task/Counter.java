@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Counter {
-    private static final String SPECIALCHARSREGEX = "[!\"#\\$%&\'()*+,-./:;<=>?@[\\\\]\\^_`\\{\\|}~ ]";
+    private static final String SPECIALCHARSREGEX = "[!\"#\\$%&\'()*+,-./:;<=>?@[\\\\]\\^_`\\{\\|}~ \n\r]";
     private int totalFrequency;
     private List<CharsLengthFrequency> charLengthList;
     private InputStrategy is;
@@ -27,7 +27,7 @@ public class Counter {
 
         for(String word : split){
             int wordLength = word.length();
-            CharsLengthFrequency charsLengthFrequencyForWord = new CharsLengthFrequency(wordLength);
+            CharsLengthFrequency charsLengthFrequencyForWord = new CharsLengthFrequency(wordLength,chars);
 
             for(int i = 0 ; i < wordLength ; i++){
                 char charactedInWord = word.charAt(i);

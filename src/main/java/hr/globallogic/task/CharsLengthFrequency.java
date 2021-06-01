@@ -1,17 +1,21 @@
 package hr.globallogic.task;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 
 public class CharsLengthFrequency {
     private HashSet<Character> chars;
     private int length;
     private int frequency;
+    private String charsToSort;
 
-    public CharsLengthFrequency(int length){
+    public CharsLengthFrequency(int length,String charsToSort){
         this.length=length;
         chars = new HashSet<>();
+        this.charsToSort=charsToSort;
     }
 
     public void addChar(char toAdd){
@@ -38,8 +42,18 @@ public class CharsLengthFrequency {
 
     @Override
     public String toString() {
-        return "{"+ chars +
-                ", " + length +
+        StringBuilder sb = new StringBuilder();
+        for( int i = 0 ; i < charsToSort.length() ; i++){
+            char c = charsToSort.charAt(i);
+            if(chars.contains(c)) {
+                sb.append(c);
+                sb.append(",");
+            }
+
+        }
+        sb.setLength(sb.length()-1);
+        return "{("+ sb.toString()+
+                "), " + length +
                 '}';
     }
 

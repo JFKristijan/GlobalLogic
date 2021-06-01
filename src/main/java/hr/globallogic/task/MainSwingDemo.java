@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class MainSpringDemo extends JFrame {
+public class MainSwingDemo extends JFrame {
     private JTextArea textArea;
     private JTextField charsField;
     private JTextField inputField;
@@ -34,7 +34,7 @@ public class MainSpringDemo extends JFrame {
         }
     };
 
-    public MainSpringDemo(){
+    public MainSwingDemo(){
         Container c = getContentPane();
         c.setLayout(new BorderLayout());
         textArea=new JTextArea();
@@ -76,6 +76,6 @@ public class MainSpringDemo extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(()->new MainSpringDemo().setVisible(true));
+        SwingUtilities.invokeLater(()->new MainSwingDemo().setVisible(true));
     }
 }
