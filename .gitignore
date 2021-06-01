@@ -23,7 +23,6 @@
 hs_err_pid*
 
 # IntelliJ
-.idea/
 *.iml
 .idea/workspace.xml
 .idea/tasks.xml
